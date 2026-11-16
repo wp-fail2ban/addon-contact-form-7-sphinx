@@ -9,6 +9,12 @@ from pygments.lexers.web import PhpLexer
 
 import json
 import os
+import sys
+
+# -- Path setup --------------------------------------------------------------
+
+sys.path.insert(0, os.path.abspath('_ext'))
+
 
 # -- Project information -----------------------------------------------------
 
@@ -26,7 +32,8 @@ if _pkg.get('version_label'):
 # -- General configuration ---------------------------------------------------
 
 extensions = [
-    'sphinx.ext.intersphinx'
+    'sphinx.ext.intersphinx',
+    'wpf2b_nav_ellipsis',
 ]
 
 templates_path = ['_templates']
@@ -38,7 +45,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv', 'venv']
 
 html_theme = 'sphinx_rtd_theme'
 
-html_static_path = []
+html_static_path = ['_static']
 
 # The master toctree document.
 master_doc = 'index'
