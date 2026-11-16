@@ -11,14 +11,14 @@ WP_FAIL2BAN_ADDON_CF7_ENABLED
 ----
 
 Fixes whether the add-on logs Contact Form 7 spam submissions. When the
-constant is defined, it overrides the saved WordPress option
-``wpf2b_addon_cf7_enabled`` and locks the QuickStart card and the Contact
-Form 7 settings **Enabled** control.
+constant is defined, it locks the QuickStart card and the Contact Form 7
+settings **Enabled** control to that value.
 
 A :php:`true` value keeps logging on; a :php:`false` value keeps it off.
-Without the constant, a missing option defaults to enabled. Disabling the
-add-on stops message registration and the Contact Form 7 spam hook without
-removing the settings UI that turns it back on.
+Without the constant, logging defaults to enabled and operators can change it
+from QuickStart or the Contact Form 7 settings tab. Disabling the add-on stops
+message registration and the Contact Form 7 spam hook without removing the
+settings UI that turns it back on.
 
 .. code-block:: php
    :caption: Example: Disable Contact Form 7 spam logging
@@ -27,10 +27,9 @@ removing the settings UI that turns it back on.
 
 **Accepted values:** :php:`true` or :php:`false`
 
-**Default:** enabled (the option is absent or stores ``'1'``)
+**Default:** enabled
 
-The option stores only the strings ``'0'`` and ``'1'``. Free and Premium both
-save the option unless a PHP constant locks it.
+Free and Premium both honour the UI controls unless a PHP constant locks them.
 
 .. rubric:: History
 .. versionadded:: 3.0.0
